@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="toDo">
+        <div class="todo-wrapper">
+           <div class="media-text">
+               Double click on task to edit
+           </div>
+            <form @submit.prevent="addTodo" class="todo-main">
+                <input type="text" v-model="message" placeholder="I want to do.." required
+                @keyup.enter="editMessage(index)">
+                <button class="button">Add to do</button>
+            </form>
+            <div class="todo-content">
+                <div class="todo-content__item" v-for="(item, index) in todo"
+                   :class="{checked: !item.status}">
+                   <input type="text" class="editor"
+                    @keyup.enter="editMessage(index)"
+                    v-model="item.editedMessage"
+                    v-show="item.editor" placeholder="Edit todo here...">
+                    <div class="task"
+                    @dblclick="item.editor = !item.editor">{{item.message}}</div>
+                    <div class="event-wrapper">
+                        <button class="button button--remove"
+                        @click="removeTodo(index)">Remove</button>
+                        <button class="button button--check"
+                        @click="checkTodo(index)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
