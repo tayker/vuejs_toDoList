@@ -64,6 +64,11 @@
             transition: .3s;
             position: relative;
             
+            &:hover{
+                .time{
+                    opacity: 1;
+                }
+            }
             &.checked{
                 border-color: #00a98f;
                 .task{
@@ -99,6 +104,14 @@
                     background-color: #999;
                     transition: .3s;
                 }
+            }
+            .time{
+                position: absolute;
+                right: -200px;
+                width: 200px;
+                text-align: center;
+                opacity: 0;
+                transition: .3s;
             }
             .event-wrapper{
                 display: flex;

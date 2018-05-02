@@ -27,6 +27,9 @@
                     v-show="item.editor" placeholder="Edit todo here...">
                     <div class="task"
                     @dblclick="item.editor = !item.editor">{{item.message}}</div>
+                    <div class="time">
+                        {{item.addedTime}}
+                    </div>
                     <div class="event-wrapper">
                         <button class="button button--remove"
                         @click="removeTodo(index)">Remove</button>

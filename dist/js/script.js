@@ -7,14 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     message: 'Some todo',
                     status: true,
                     editor: false,
-                    editedMessage: ''
+                    editedMessage: '',
+                    addedTime: Date()
                 }
             ],
             message: ''
         },
         methods: {
             addTodo: function(){
-                this.todo.push({message: this.message, status: true, editor: false});
+                this.todo.push({message: this.message, status: true, editor: false, addedTime: Date()});
                 this.message = ''
                 localStorage.setItem('todos', JSON.stringify(this.todo));
                 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if(localStorage.getItem('todos') !== null){
                 this.todo = JSON.parse(localStorage.getItem('todos'))
             }
+            console.log(Date())
         }
     })
 });

@@ -67,6 +67,8 @@
     -o-transition: .3s;
     transition: .3s;
     position: relative; }
+    .todo-content__item:hover .time {
+      opacity: 1; }
     .todo-content__item.checked {
       border-color: #00a98f; }
       .todo-content__item.checked .task {
@@ -99,6 +101,15 @@
         -webkit-transition: .3s;
         -o-transition: .3s;
         transition: .3s; }
+    .todo-content__item .time {
+      position: absolute;
+      right: -200px;
+      width: 200px;
+      text-align: center;
+      opacity: 0;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; }
     .todo-content__item .event-wrapper {
       display: -webkit-box;
       display: -ms-flexbox;
